@@ -96,8 +96,9 @@ for i in range (0, len(yarn_apps)):
   print "YARN App Name: " + yarn_app.name
   print "YARN User: " + yarn_app.user
   print "State: " + yarn_app.state
-  ## Get the YARN Hive jobs
-  #hive_query = yarn_app.get_yarn_application_attributes['pool']
-  # if hive_query is not None: 
-  #   print "Hive Query: " + hive_query
+  
+  ## Get the Hive SQL
+  hive_query_string = yarn_app.attributes.get("hive_query_string",None)
+  if hive_query_string is not None: 
+    print "Hive Query: " + hive_query_string
   print "\n-----------------------------------------"
